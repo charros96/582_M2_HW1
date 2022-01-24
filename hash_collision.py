@@ -30,7 +30,8 @@ def hash_collision(k):
         new_bits = get_bits(new_string, k)
 
         for i in range(len(list_of_strings)):
-            if (new_bits==get_bits(list_of_strings[i],k)):
+            x_bits = get_bits(list_of_strings[i],k)
+            if (new_bits==x_bits):
                 x = list_of_strings[i]
                 y = new_string
                 break
@@ -38,7 +39,7 @@ def hash_collision(k):
         list_of_strings.append(new_string)        
 
         count= count + 1
-        print(count)
+        #print(count)
     #Collision finding code goes here
 
 
@@ -56,5 +57,3 @@ def get_string(length, characters):
     
     string = ''.join(random.choice(characters) for i in range(length))
     return string
-
-hash_collision(9)
